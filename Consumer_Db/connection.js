@@ -15,10 +15,26 @@ const conf = require("./conf.json");
 //     }
 //   client.end()
 // })
-
+function create(params) {
+    
+}
 function writeData(data) {
     const client = new Client(conf.pg)
     client.connect()
+    const q = `CREATE TABLE IF NOT EXISTS public."Time"
+    (
+        time character varying(30)
+    );
+    
+ ALTER TABLE public."Time"
+        OWNER to postgres;`
+    client.query(q, (err, res) => {
+        if (err == null) {
+        } else {
+            console.error(err)
+        }
+        
+    })
     client.query(`INSERT INTO public."Time"("time") VALUES ($1);`, [data], (err, res) => {
         if (err == null) {
             console.log("Veritabanına kaydedildi.")

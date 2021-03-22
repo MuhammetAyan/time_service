@@ -10,6 +10,8 @@ Ve ardından `Producer` konternerimiz üzerindeki producer servisi ile 10 saniye
 
 ## Kurulum
 
+**Kullanılacak teknolojilerin kurulması:**
+
 PostgreSQL, Kafka, Pgadmin, Zookeeper'ın kurulumu için aşağıdaki komutları çalıştırınız.
 
 ```
@@ -58,6 +60,18 @@ docker start kafka pgadmin
 ```
 
 burada `timeout 6` 6 saniye gecikme uygulayacaktır. Bunun nedeni kafka ve pgadmin için zookeeper ve pg'nin başlamış olması gerekir.
+
+**PgAdmin üzerinden veritabanı oluşturma:**
+
+[http://localhost:5555](http://localhost:5555) adresinden pgadmin'e bağlanıp veritabanı oluşturalım.
+
+Giriş bilgilerimiz kullanıcı adı şifre `postgres` ve `password`.
+
+`New Server` üzerinden `172.20.240.4` ip adresli konteyner'a yukarıdaki kullanıcı adı ve şifresiyle bağlanalım.
+
+Bağlantı üzerinden `TimeServiceDB` adlı bir veritabanı oluşturalım.
+
+**Proje Konteyner'lerinin oluşturulması:**
 
 Şimdi projenin docker konteyner'larının oluşturulmasına geçelim.
 Sırayla `Producer` ve `Consumer_Db` klasörlerine girelim.

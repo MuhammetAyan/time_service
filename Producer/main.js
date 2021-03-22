@@ -1,10 +1,8 @@
 const { Kafka } = require("kafkajs");
 const conf = require("./conf.json");
-const { createTable, writeData } = require("./connection");
 const { createTopic } = require("./topic");
 
 createTopic();
-// createTable();
 createProducer();
 
 async function createProducer() {
