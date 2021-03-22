@@ -1,0 +1,1 @@
+docker stop consumer_db

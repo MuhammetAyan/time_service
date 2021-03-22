@@ -1,0 +1,15 @@
+{
+    "kafka": {
+        "clientId": "kafka_log_db_client",
+        "brokers": [
+            "172.20.240.3:9092"
+        ]
+    },
+    "pg": {
+        "user": "postgres",
+        "host": "172.20.240.4",
+        "database": "TimeServiceDB",
+        "password": "password",
+        "port": 5432
+    }
+}
